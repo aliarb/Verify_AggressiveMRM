@@ -1,0 +1,2 @@
+n_tests,emergency_stop_avoidance_pct,dodge_avoidance_pct,drift_avoidance_pct,emergency_stop_impact_mean,dodge_impact_mean,drift_impact_mean,drift_acc_impact_mean,emergency_stop_mitigable_pct,dodge_mitigable_pct,drift_mitigable_pct,drift_acc_mitigable_pct
+54,14.814814814814815,22.22222222222222,33.333333333333336,40.58986246905656,31.785714285714285,20.0,23.374999999999996,62.96296296296296,100.0,100.0,100.0

@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the associated article."
+title: "EMRM V&V Framework: HARA-STPA-FSM Scenario Validation"
+authors:
+  - family-names: Arab
+    given-names: Aliasghar
+  - family-names: Khaleghi
+    given-names: Milad
+  - family-names: Aslansefat
+    given-names: Koorosh
+  - family-names: Mousavi
+    given-names: Yashar
+  - family-names: Abbaspour
+    given-names: Alireza
+preferred-citation:
+  type: article
+  title: "Safety Verification of Aggressive Minimum Risk Maneuvers using High-Resolution Assessments for Autonomous Cars"
+  authors:
+    - family-names: Arab
+      given-names: Aliasghar
+    - family-names: Khaleghi
+      given-names: Milad
+    - family-names: Aslansefat
+      given-names: Koorosh
+    - family-names: Mousavi
+      given-names: Yashar
+    - family-names: Abbaspour
+      given-names: Alireza
+  year: 2026

@@ -1,0 +1,12 @@
+param,level,dodge,drift_avoid,drift_acc,emergency_stop,n
+Ego Speed,Low,100,100,100,89,18
+Ego Speed,Med,100,100,100,67,18
+Ego Speed,High,100,100,100,33,18
+TTC,Low,100,100,100,33,18
+TTC,Med,100,100,100,67,18
+TTC,High,100,100,100,89,18
+Friction,Low,100,100,100,33,18
+Friction,Med,100,100,100,67,18
+Friction,High,100,100,100,89,18
+Passage,Narrow,100,100,100,63,27
+Passage,Wide,100,100,100,63,27

@@ -1,0 +1,53 @@
+# EMRM Scene 1: T-junction with truck blocking main road
+# Scenario for validating Emergency Minimum Risk Maneuvers (EMRM)
+# Matches Fig. EMRM_Scen1 in the paper: truck blocks roadway, ego must evade or mitigate
+#
+# Map: maps/tjunction_map.png — Workspace scaled for full-size vehicle on 2-sided (2-lane) road
+#   - Black areas: Unsafe state / obstacle (truck, vehicles, curbs, buildings)
+#   - White/light: Drivable road surface
+#   - Gray lines: Lane markings (drivable)
+#   - Truck in middle: Primary obstacle
+
+id: EMRM_Scene1_tjunction
+name: "EMRM Scene 1: T-junction truck blocking"
+description: |
+  T-shaped intersection, 2-sided road. Our vehicle (above junction) approaches
+  at high speed toward bottom; truck in middle blocks intersection.
+  Any black area = obstacle.
+  Validates: Dodge, Drift-to-Avoid, Drift-to-Accident vs Emergency Stop.
+
+map_region:
+  type: file
+  map_file: maps/tjunction_map.png
+  map_pixels_per_meter: 10   # 477x533 px -> ~48m x 53m, black=obstacle, gray/white=free
+  map_origin_x_px: 0
+  map_origin_y_px: 0
+  obstacle_threshold: 50     # Pixel < 50 -> obstacle (black); gray/white -> free (road, initial state)
+  road_conditions: [dry, wet]
+
+# Initial state: above intersection, high speed toward goal (bottom)
+initial_state:
+  x: 41.8   # Right lane of vertical road
+  y: 5.2    # Above intersection
+  psi: -1.57 # -90 deg, facing down toward goal
+  vx: 20.0  # ~72 km/h, high speed toward goal
+  vy: 0.0
+  r: 0.0
+
+# Goal: bottom of map
+goal_state:
+  x: 41.6
+  y: 48.0   # Bottom of map
+  psi: -1.57
+  vx: 15.0
+  vy: 0.0
+  r: 0.0
+
+expected_outcome:
+  planner_success: true
+  controller_reaches_goal: true
+  metrics:
+    planner_nodes_max: 10000
+    planner_best_cost_max: 500.0
+    nmpc_rms_pos_err_max: 1.5
+    nmpc_final_pos_err_max: 1.0
