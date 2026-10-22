@@ -29,6 +29,13 @@ run_coverage_test.py  Coarse parameter-space coverage sweep
 run_coverage_fine.py  Fine-grid coverage sweep (speed x TTC)
 run_friction_sweeps.py Friction / speed / TTC sweeps
 run_validation_scenarios.py  EMRM vs emergency-braking validation
+run_sim_brake.py      Emergency-braking baseline simulated with the RRT plant
+run_seed_campaign.py  Seed replication and TTC boundary refinement (Wilson intervals)
+run_uca4_truncation.py  UCA4 test: EMRM avoidance path terminated prematurely
+run_straight_road.py  Additional scenario: straight road with a stalled vehicle
+audit_revision.py     Recomputes every reported count and metric from results/
+plot_revision_figs.py Outcome maps and parameter-sweep figures of the revision
+render_fig8.py        Composite of the 12 canonical RRT scenarios (Fig. 8)
 plot_trajectories_on_map.py  Trajectory plotting utilities
 fix_start_area.py     Map start-area preparation helper
 results/              Generated CSV results and demo trajectories
@@ -56,6 +63,25 @@ python run_friction_sweeps.py
 
 # EMRM vs emergency-braking validation
 python run_validation_scenarios.py
+
+# Simulated emergency-braking baseline
+python run_sim_brake.py
+
+# Seed replication and boundary refinement
+python run_seed_campaign.py
+
+# UCA4 (premature termination) test
+python run_uca4_truncation.py
+
+# Additional straight-road scenario
+python run_straight_road.py
+
+# Recompute all reported numbers from the CSV results (no simulation)
+python audit_revision.py
+
+# Figures of the revised manuscript
+python plot_revision_figs.py
+python render_fig8.py
 ```
 
 Generated CSV outputs are written under `results/` and match the figures and

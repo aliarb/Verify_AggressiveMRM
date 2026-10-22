@@ -437,11 +437,14 @@ def rrt_double_tree(
     border_cost_factor: float = BORDER_COST_FACTOR,
     object_cost_factor: float = OBJECT_COST_FACTOR,
     border_margin: float = BORDER_COLLISION_MARGIN,
+    sample_boxes: dict | None = None,
 ) -> tuple[dict, dict, list, int]:
     """
     Green-orange double-tree RRT. Both trees use parallel structure: {nodes, edges, parent}.
     - Green: exploitation toward goal, collision-free.
     - Orange: no goal; parent=less energy; Obj1 stop, Obj2 min momentum.
+    sample_boxes overrides the map-specific sampling regions ("junction",
+    "left", "right"), each ((x0, x1), (y0, y1)); defaults are the T-junction map.
     Returns (tree_green, tree_orange, best_path, n_drained).
     """
     v0 = start[3]
@@ -458,6 +461,10 @@ def rrt_double_tree(
     junction_x, junction_y = (40.0, 48.0), (15.0, 45.0)
     left_x, left_y = (5.0, 38.0), (10.0, 50.0)
     right_x, right_y = (42.0, 48.0), (10.0, 50.0)
+    if sample_boxes:
+        junction_x, junction_y = sample_boxes.get("junction", (junction_x, junction_y))
+        left_x, left_y = sample_boxes.get("left", (left_x, left_y))
+        right_x, right_y = sample_boxes.get("right", (right_x, right_y))
     junction_rate = 0.25
     left_rate = 0.20
     right_rate = 0.20

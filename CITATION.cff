@@ -1,6 +1,10 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite the associated article."
 title: "EMRM V&V Framework: HARA-STPA-FSM Scenario Validation"
+version: 1.1.0
+date-released: 2026-10-22
+license: MIT
+repository-code: "https://github.com/aliarb/Verify_AggressiveMRM"
 authors:
   - family-names: Arab
     given-names: Aliasghar
