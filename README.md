@@ -15,6 +15,29 @@ scenario coverage, the mitigability mapping over the (ego speed, time-to-collisi
 road friction) parameter space, and the EMRM-vs-emergency-braking comparison
 reported in the article.
 
+<p align="center">
+  <img src="media/fig1_emrm_scenario.png" alt="Fig. 1: T-junction scenario, schematic and CARLA simulation" width="100%">
+</p>
+
+*Fig. 1. Motivating T-junction scenario with a truck blocking the road: (a–c) concept
+schematic and (d–f) the same scenario simulated in CARLA, from hazard identification
+through the evasive MRM to a stop with clearance.*
+
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <a href="media/emrm_carla_driver_view.mp4"><img src="media/emrm_carla_driver_view.gif" alt="EMRM in CARLA, driver view" width="100%"></a>
+      <br><sub>Driver view</sub>
+    </td>
+    <td align="center" width="50%">
+      <a href="media/emrm_carla_topview.mp4"><img src="media/emrm_carla_topview.gif" alt="EMRM in CARLA, top view" width="100%"></a>
+      <br><sub>Top view</sub>
+    </td>
+  </tr>
+</table>
+
+*Evasive MRM at the T-junction simulated in CARLA. Click a clip for the full-resolution video.*
+
 ## Repository layout
 
 ```
@@ -39,6 +62,7 @@ render_fig8.py        Composite of the 12 canonical RRT scenarios (Fig. 8)
 plot_trajectories_on_map.py  Trajectory plotting utilities
 fix_start_area.py     Map start-area preparation helper
 results/              Generated CSV results and demo trajectories
+media/                Fig. 1 and CARLA videos shown in this README
 ```
 
 ## Requirements
