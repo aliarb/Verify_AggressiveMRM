@@ -16,12 +16,14 @@ road friction) parameter space, and the EMRM-vs-emergency-braking comparison
 reported in the article.
 
 <p align="center">
-  <img src="media/fig1_emrm_scenario.png" alt="Fig. 1: T-junction scenario, schematic and CARLA simulation" width="100%">
+  <img src="media/fig1_emrm_scenario.png" alt="T-junction scenario, schematic and CARLA illustration" width="100%">
 </p>
 
-*Fig. 1. Motivating T-junction scenario with a truck blocking the road: (a–c) concept
-schematic and (d–f) the same scenario simulated in CARLA, from hazard identification
-through the evasive MRM to a stop with clearance.*
+*T-junction scenario with a truck blocking the road: concept schematic (top) and the
+same scenario illustrated in the CARLA driving simulator (bottom), from hazard
+identification through the evasive MRM to a stop with clearance. The CARLA scenes are
+illustrations; all reported results come from the vehicle model and planner in this
+repository.*
 
 <table>
   <tr>
@@ -57,12 +59,13 @@ run_seed_campaign.py  Seed replication and TTC boundary refinement (Wilson inter
 run_uca4_truncation.py  UCA4 test: EMRM avoidance path terminated prematurely
 run_straight_road.py  Additional scenario: straight road with a stalled vehicle
 audit_revision.py     Recomputes every reported count and metric from results/
+revision_tables.py    Reproduces Tables 10, 11, and 13 and the worst-case baseline points
 plot_revision_figs.py Outcome maps and parameter-sweep figures of the revision
 render_fig8.py        Composite of the 12 canonical RRT scenarios (Fig. 8)
 plot_trajectories_on_map.py  Trajectory plotting utilities
 fix_start_area.py     Map start-area preparation helper
 results/              Generated CSV results and demo trajectories
-media/                Fig. 1 and CARLA videos shown in this README
+media/                Scenario figure and CARLA videos shown in this README
 ```
 
 ## Requirements
@@ -102,6 +105,7 @@ python run_straight_road.py
 
 # Recompute all reported numbers from the CSV results (no simulation)
 python audit_revision.py
+python revision_tables.py
 
 # Figures of the revised manuscript
 python plot_revision_figs.py

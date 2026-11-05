@@ -40,8 +40,8 @@ G, Y, O, R, X = 4, 3, 2, 1, 0
 COL = {G: "#2e7d32", Y: "#f9a825", O: "#e65100", R: "#b71c1c", X: "#d9d9d9"}
 LAB = {G: "Avoidable by emergency braking",
        Y: "Avoidable only by EMRM steering",
-       O: r"Unavoidable; impact speed $<7$ m/s",
-       R: r"Unavoidable; impact speed $\geq 7$ m/s",
+       O: r"No path within budget; impact speed $<7$ m/s",
+       R: r"No path within budget; impact speed $\geq 7$ m/s",
        X: "Excluded (start outside map)"}
 
 
